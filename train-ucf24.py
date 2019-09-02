@@ -27,6 +27,7 @@ from utils.evaluation import evaluate_detections
 from layers.box_utils import decode, nms
 from utils import  AverageMeter
 from torch.optim.lr_scheduler import MultiStepLR
+from utils.show_model import *
 
 
 
@@ -98,6 +99,7 @@ def main():
         os.makedirs(args.save_root)
 
     net = build_ssd(300, args.num_classes)
+    show_model3(net)
 
     if args.cuda:
         net = net.cuda()
